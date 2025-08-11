@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: userService
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: movie-service
+
+
+mongodb:
+  repositories:
+    enabled: true
+
+
+
+server:
+  port: 8080
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework.data.mongodb.core: DEBUG # Logs Mongo queries
+
