@@ -1,0 +1,39 @@
+spring:
+  application:
+      name: jwtauthservice
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/booking_ticket?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # or validate/create-drop based on requirement
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+
+
+
+  secretKey: Dgxr+JCTCN65JStT2hcDek5ol7d3XalKMIklCYv6kNA=
+
+
+jwt:
+  accessTokenExpiration: 120000   #2 min in milliseconds
+  refreshTokenExpiration: 86400000 #1 day in millisecond
+
+
+
+server:
+  port: 8080
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
